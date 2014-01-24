@@ -16,9 +16,32 @@ Or install it yourself as:
 
     $ gem install sidekiq-recurrence
 
+
+```sh
+$ cd /apps/my-great-project
+$ wheneverize .
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+''' ruby
+require 'sidekiq/worker'
+require 'sidekiq/recurrence'
+
+class BasicWorker
+  include Sidekiq::Worker
+  include Sidekiq::Recurrence
+
+  recurrence 1.day
+  # OR
+  recurrence [1.day, :at => '4:30 am']
+
+  def perform
+    # do stuff ...
+  end
+
+end
+```
 
 ## Contributing
 
