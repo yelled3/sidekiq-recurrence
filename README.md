@@ -24,7 +24,7 @@ $ wheneverize .
 
 ## Usage
 
-''' ruby
+'''ruby
 require 'sidekiq/worker'
 require 'sidekiq/recurrence'
 
