@@ -1,6 +1,7 @@
 # Sidekiq::Recurrence
 
-TODO: Write a gem description
+Simple integration between Sidekiq and Whenever gems. 
+Based on Sidetiq's DSL.
 
 ## Installation
 
