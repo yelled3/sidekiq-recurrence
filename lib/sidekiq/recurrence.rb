@@ -35,7 +35,7 @@ end
 
 module Whenever
   class JobList
-    extend Sidekiq::Recurrence::Runner
+    include Sidekiq::Recurrence::Runner
   end
 end
 
@@ -47,15 +47,16 @@ module Sidekiq
     module ClassMethods
       include ClassTracker
 
-      # get from worker class
-      def frequency
-        return :sunday, :at => '12pm'
-      end
+      attr_accessor :recurrence
 
       def job_name
         "#{self.class}.perform_async"
       end
 
+    end
+
+    def self.included(base)
+      base.extend(ClassMethods)
     end
 
   end
