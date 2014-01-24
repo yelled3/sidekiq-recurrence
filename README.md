@@ -16,11 +16,11 @@ Or install it yourself as:
 
     $ gem install sidekiq-recurrence
 
-
 ```sh
 $ cd /apps/my-great-project
-$ wheneverize .
+$ wheneverize-recurrence .
 ```
+This will create or update the `config/schedule.rb` file for you.
 
 ## Usage
 
