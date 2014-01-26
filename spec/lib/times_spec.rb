@@ -73,6 +73,15 @@ describe 'IceCube To Whenever cron syntax' do
       end
     end
 
+    describe :date_with_interval do
+      let(:cron_result) { "0 0 1,5,9,13,17,21,25,29 * *" }
+      let(:time_rule) { IceCube::Rule.daily(4) }
+
+      it 'converts ice_cube time to cron syntax' do
+        expect(time_in_cron).to eq cron_result
+      end
+    end
+
     describe :date_with_time do
 
       let(:at_time) { '12:20am' }
